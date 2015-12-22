@@ -1,19 +1,20 @@
 nginx:
-  container_name: example.com
+  container_name: nginx.boilerplate
   image: nginx
   ports:
     - 80:80
     - 443:443
   volumes:
-    - ./test/www/:/var/www/example.com/:ro
-    - ./src/:/etc/nginx/
+    - ./www/:/var/www/nginx.boilerplate/:ro
+    - ./src/:/etc/nginx/:ro
+    - ./test/logs:/var/log/nginx/
   links:
     - php
 
 php:
-  container_name: php.example.com
+  container_name: php.nginx.boilerplate
   image: php:fpm
   expose:
     - 9000
   volumes:
-    - ./test/www/:/var/www/example.com/:ro
+    - ./www-fpm/:/var/www/nginx.boilerplate/:ro

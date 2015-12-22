@@ -1,8 +1,9 @@
 src/sites-available/*
-!src/sites-available/invalid.conf
-!src/sites-available/example.com.conf
+!src/sites-available/default.conf
+!src/sites-available/nginx.boilerplate.conf
 src/sites-enabled/*
-!src/sites-enabled/invalid.conf
-!src/sites-enabled/example.com.conf
+!src/sites-enabled/default.conf
+!src/sites-enabled/nginx.boilerplate.conf
 node_modules
 .idea
+test/logs/*
