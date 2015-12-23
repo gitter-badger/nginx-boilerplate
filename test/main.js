@@ -15,4 +15,4 @@ requestWww.get('').expect(301, handle);
 requestNormal.get('.git').expect(403, handle);
 requestNormal.get('').expect(200, handle);
 requestNormal.get('some/random/url/').expect(200, handle);
-requestNormal.get('script.php').expect(200, 'ok');
+requestNormal.get('dir/script.php').expect(200, 'ok', handle);
